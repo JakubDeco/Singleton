@@ -14,5 +14,6 @@ public class Main {
 
         sun.printPlanetsWithStr("ar");
         sun.printPlanetNames();
+        sun.findClosestToSun();
     }
 }

@@ -1,8 +1,6 @@
 package sk.kosickaakademia.galaxy;
 
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Set;
+import java.util.*;
 
 public class Sun {
     private static Sun instance;
@@ -51,5 +49,29 @@ public class Sun {
                 System.out.println(planet.getName());
         }
         System.out.println("----------------------------");
+    }
+
+    public void findClosestToSun(){
+        List<Planet> result = new ArrayList<>();
+        for (Planet planet :
+                planets) {
+            if (result.isEmpty()){
+                result.add(planet);
+                continue;
+            }
+            if (planet.getDistanceFromSun() < result.get(0).getDistanceFromSun()){
+                result.removeAll(new HashSet<>(result));
+                result.add(planet);
+            }
+            if (planet.getDistanceFromSun() == result.get(0).getDistanceFromSun()){
+                result.add(planet);
+            }
+        }
+
+        // final result print
+        for (Planet planet :
+                result) {
+            System.out.println(planet);
+        }
     }
 }

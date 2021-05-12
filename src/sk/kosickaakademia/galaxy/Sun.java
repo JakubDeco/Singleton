@@ -28,14 +28,28 @@ public class Sun {
     }
 
     public void printPlanetNames(){
-        for (Planet planet :
+        System.out.println("List of all planets of sun:");
+        /*for (Planet planet :
                 planets) {
             System.out.println(planet.getName());
-        }
-        /*Iterator<Planet> iterator = planets.iterator();
-        while (iterator.hasNext()){
-            Planet planet = (Planet) iterator.next();
-            System.out.println( planet.getName() );
         }*/
+        Iterator<Planet> iterator = planets.iterator();
+        while (iterator.hasNext()){
+            /*Planet planet = (Planet) iterator.next();
+            System.out.println( planet.getName() );*/
+            System.out.println(iterator.next().getName());
+        }
+        System.out.println("----------------------------");
+    }
+
+    public void printPlanetsWithStr(String str){
+        System.out.println("List of planets with \"" + str + "\" in name:");
+
+        for (Planet planet :
+                planets) {
+            if (planet.getName().toLowerCase().contains(str))
+                System.out.println(planet.getName());
+        }
+        System.out.println("----------------------------");
     }
 }

@@ -11,5 +11,8 @@ public class Main {
         sun.addPlanet(earth);
         sun.addPlanet(saturn);
         sun.addPlanet(mars);
+
+        sun.printPlanetsWithStr("ar");
+        sun.printPlanetNames();
     }
 }

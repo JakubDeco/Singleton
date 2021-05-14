@@ -78,8 +78,13 @@ public class Matrix {
                 {1,8,5},
                 {0,2,4}
         };
-        System.out.println(m.mainDiagonal(matrixB));
-        System.out.println(m.antidiagonal(matrixA));
+        int[][] matrix = new int[][]{
+                {2,5,9,8,1},
+                {8,9,-5,2,7},
+                {1,8,7,9,2},
+                {-2,4,0,7,2} };
+        System.out.println(m.mainDiagonal(matrix));
+        System.out.println(m.antidiagonal(matrix));
         System.out.println(Arrays.deepToString(m.multiply(matrixA, matrixB)));
     }
 }
